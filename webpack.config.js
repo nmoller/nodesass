@@ -23,15 +23,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.txt/,
-				use: 'raw-loader'
-			},
-			{
-				test: /\.js$/,
-				exclude: /node_module/,
-				use: 'babel-loader'
-			},
-			{
 				test:/\.scss$/,
 				use: ExtractTextPlugin.extract({
 		          fallback: 'style-loader',
