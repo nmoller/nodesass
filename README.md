@@ -1,5 +1,39 @@
 # WEBPACK
 
+# Première fois
+
+Clonner le dépot
+```
+git clone git@github.com:nmoller/nodesass.git
+```
+
+#### Installer les nodes_modules
+
+Installer les dépendances:
+
+**Utiliser le uid (-u 1000) de l'utilisateur locale pour ne pas avoir des problèmes de permissions.**
+
+```
+cd [clonning_folder]
+docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" node:6 npm install
+```
+
+
+**Le tout est prêt pour commencer le devéloppement.**
+
+Pour générer le fichier [dossier_travail]/dist/testapp.css :
+
+```
+docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" node:6 npm run wp
+```
+
+Si jamais vous voulez faire du dev avec webpack, vus pouvez utiliser:
+```
+docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" -p 3000:3000 node:6 npm run dev
+```
+
+# Depuis le début
+
 ### Préalables:
 
 - nodejs
@@ -46,18 +80,4 @@ Installer les loader nécessaires:
 
 ```
 npm i sass-loader node-sass -D
-```
-
-## Dev using docker
-
-Pour ne pas poluer la machine du developpeur:
-```
-docker run -it --rm -v [folder_path]:/opt/moodle node:6 bash
-```
-
-Les images node utilisent utilisateur uid 1000 (ça marche bien quand on est en linux et on est le uid 1000).
-
-Sinon il faudra voir le uid des folders mountés et travailler avec:
-```
-docker run -it --rm -u [uid] -v [folder_path]:/opt/moodle node:6 bash
 ```
