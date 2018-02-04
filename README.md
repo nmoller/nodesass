@@ -1,17 +1,20 @@
 # WEBPACK
 
 # Première fois
+
 Clonner le dépot
 ```
 git clone git@github.com:nmoller/nodesass.git
 ```
 
 #### Installer les nodes_modules
-**Utiliser le uid de l'utilisateur locale pour ne pas avoir des problèmes de permissions.**
 
 Installer les dépendances:
 
+**Utiliser le uid (-u 1000) de l'utilisateur locale pour ne pas avoir des problèmes de permissions.**
+
 ```
+cd [clonning_folder]
 docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" node:6 npm install
 ```
 
