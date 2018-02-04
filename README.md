@@ -27,10 +27,12 @@ Pour générer le fichier [dossier_travail]/dist/testapp.css :
 docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" node:6 npm run wp
 ```
 
+
 Si jamais vous voulez faire du dev avec webpack, vus pouvez utiliser:
 ```
 docker run -it --rm -u 1000 -v `pwd`:/opt/moodle --workdir="/opt/moodle" -p 3000:3000 node:6 npm run dev
 ```
+
 
 # Depuis le début
 
